@@ -148,8 +148,10 @@ public class SinglyLinkedList<T> implements Iterable<T> {
         return lastObj;
     }
     
-    public Node removeAt(int index){
+    public T removeAt(int index){
+        
         Node nodeToRemove = get(index);
+        T removedObj = nodeToRemove.content;
 
         Node prevNode = nodeToRemove.prev;
         Node nextNode = nodeToRemove.next;
@@ -162,7 +164,7 @@ public class SinglyLinkedList<T> implements Iterable<T> {
             nextNode.prev = prevNode;
         }
 
-        return nodeToRemove;
+        return removedObj;
     }
 
     public int indexOf(Object o){
@@ -177,14 +179,19 @@ public class SinglyLinkedList<T> implements Iterable<T> {
         }
         return index;
     }
-    public boolean contains(Object o){
+    public boolean contains(T o){
         Node currentNode = first;
 
-        while (currentNode != null) {
-            if (currentNode.content == o) {
-                return true;
+        if (o == null) {
+            if (currentNode.content == null) {
+                return true; 
             }
-            currentNode = currentNode.next;
+        } 
+
+        else {
+            if (o.equals(currentNode.content)) {
+                return true; 
+            }
         }
 
         return false;
