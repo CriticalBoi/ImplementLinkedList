@@ -75,6 +75,10 @@ public class run {
                     System.out.println(list.toString());
                     break;
                 }
+                case "toString": {
+                    System.out.println(list.toString());
+                    break;
+                }
                 case "quit": return;
                 default:
                     System.out.println("Unknown command: " + cmd);
