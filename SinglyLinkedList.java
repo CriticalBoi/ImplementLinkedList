@@ -181,8 +181,8 @@ public class SinglyLinkedList<T> implements Iterable<T> {
     }
     public boolean contains(T o){
         Node currentNode = first;
-
-        if (o == null) {
+        while (currentNode != null) {
+            if (o == null) {
             if (currentNode.content == null) {
                 return true; 
             }
@@ -193,6 +193,9 @@ public class SinglyLinkedList<T> implements Iterable<T> {
                 return true; 
             }
         }
+        currentNode = currentNode.next;
+        }
+        
 
         return false;
     }
