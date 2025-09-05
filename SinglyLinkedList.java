@@ -120,6 +120,7 @@ public class SinglyLinkedList<T> implements Iterable<T> {
         return nodeToSet.content;
     }
     public T removeFirst(){
+        T firstObj = first.content;
         if(first == null) {
             throw new NoSuchElementException("The list is already empty.");
             } 
@@ -131,9 +132,10 @@ public class SinglyLinkedList<T> implements Iterable<T> {
                 first.prev = null;          //delete 1st
                 size--;                     // -1 sa size
             }
-            return first.content;
+            return firstObj;
     }
     public T removeLast(){
+        T lastObj = last.content;
         if(last == null) {
             throw new NoSuchElementException("The list is already empty.");
         } else if(last == first){
@@ -143,7 +145,7 @@ public class SinglyLinkedList<T> implements Iterable<T> {
             last.next = null;
             size--;
         }
-        return last.content;
+        return lastObj;
     }
     
     public Node removeAt(int index){
