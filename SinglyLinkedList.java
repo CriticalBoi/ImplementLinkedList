@@ -1,3 +1,4 @@
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -17,6 +18,7 @@ public class SinglyLinkedList<T> implements Iterable<T> {
     Node first = null;
     Node last = null;
     int size = 0; //track size
+    int capacity;
 
     public SinglyLinkedList(){}
 
